@@ -1,0 +1,9 @@
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\bin\Debug\Indecomm.BusinessLayer.dll
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\bin\Debug\Indecomm.BusinessLayer.pdb
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\obj\Debug\Indecomm.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\obj\Debug\Indecomm.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\obj\Debug\Indecomm.BusinessLayer.csproj.CopyComplete
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\obj\Debug\Indecomm.BusinessLayer.dll
+C:\Users\admin\source\repos\IndecommService\Indecomm.BusinessLayer\obj\Debug\Indecomm.BusinessLayer.pdb

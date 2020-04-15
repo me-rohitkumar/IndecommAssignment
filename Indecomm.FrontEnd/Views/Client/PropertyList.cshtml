@@ -1,0 +1,83 @@
+﻿@model List<Indecomm.BusinessLayer.Model.PropertyModel>
+
+@{
+    ViewData["Title"] = "Property List";
+}
+
+<h1>All Property List</h1>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().fullAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().physical.YearBuilt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().financial.ListPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().financial.MonthlyRent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().grossYield)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.physical.YearBuilt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.financial.ListPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.financial.MonthlyRent)
+                </td>
+                <td>
+                    @if (item.grossYield > 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.grossYield)
+                    }
+                </td>
+                <td>
+                    <input type="button" id="btnSave" value="Save Data" class="btn btn-sm btn-success" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $(document).on("click", "#btnSave", function () {
+        var dataRow = $(this).closest('tr').find('td');
+        var propertyData = {};
+        propertyData.Address = dataRow[0].innerText;
+        propertyData.YearBuilt = dataRow[1].innerText;
+        propertyData.ListPrice = (dataRow[2].innerText).replace('$', '').replace(',', '');
+        propertyData.MonthlyRent = (dataRow[3].innerText).replace('$', '').replace(',', '');
+        $.ajax({
+            type: "post",
+            url: "/Client/Create",
+            data: { "address": propertyData.Address, "yearBuilt": propertyData.YearBuilt, "listPrice": propertyData.ListPrice, "monthlyRent": propertyData.MonthlyRent },
+            success: function (response) {
+                alert(response.status);
+            },
+            failure: function (response) {
+                alert(response.status);
+            },
+            error: function (response) {
+                alert(response.status);
+            }
+        });
+    });
+</script>
